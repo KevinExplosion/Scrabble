@@ -1,48 +1,19 @@
-import java.util.Map;
 import java.util.HashMap;
-import java.util.ArrayList;
+import java.util.Map;
+
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
+
 import static spark.Spark.*;
 
 public class Scrabble {
+  public static HashMap letters = new HashMap();
+
   public static void main(String[] args) {
-    String layout = "templates/layout.vtl";
 
-    get("/", (request, response) -> {
-      Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/main.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
-
-    get("/detector", (request, response) -> {
-      Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/detector.vtl");
-      String userStringNumber = request.queryParams("number");
-      Integer userNumber = Integer.parseInt(userStringNumber);
-      ArrayList<Object> results = new ArrayList<Object>();
-      results = PingPong.isPingPong(userNumber);
-
-      model.put("results", results);
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
   }
 
-  public static ArrayList isPingPong(Integer number) {
-    ArrayList<Object> numbersArray = new ArrayList<Object>();
-
-    for(Integer i = 1; i <= number; i ++) {
-      if(i % 15 == 0) {
-        numbersArray.add("pingpong");
-      } else if (i % 5 == 0) {
-        numbersArray.add("pong");
-      } else if (i % 3 == 0) {
-        numbersArray.add("ping");
-      } else {
-        numbersArray.add(i);
-      }
-    }
-    return numbersArray;
+  public static Object getScore(char letter){
+    return letters.get(letter);
   }
-
 }
