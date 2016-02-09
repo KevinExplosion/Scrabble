@@ -5,7 +5,7 @@ import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
-public class PingPong {
+public class Scrabble {
   public static void main(String[] args) {
     String layout = "templates/layout.vtl";
 
