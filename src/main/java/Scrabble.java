@@ -16,4 +16,8 @@ public class Scrabble {
   public static Object getScore(char letter){
     return letters.get(letter);
   }
+
+  public Scrabble() {
+    letters.put('A', 1);
+  }
 }
