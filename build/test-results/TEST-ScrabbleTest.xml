@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ScrabbleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-02-09T21:21:41" hostname="epicodus-47.local" time="0.0">
+<testsuite name="ScrabbleTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-02-09T21:47:05" hostname="epicodus-47.local" time="0.001">
   <properties/>
+  <testcase name="getScore_forUserInputZ_returnsScore10" classname="ScrabbleTest" time="0.001"/>
   <testcase name="getScore_forUserInputA_returnsScore1" classname="ScrabbleTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
